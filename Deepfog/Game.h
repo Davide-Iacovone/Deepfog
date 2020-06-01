@@ -10,6 +10,7 @@
 #include "SFML/Window.hpp"
 #include "State.h"
 #include "GameState.h"
+#include "MenuState.h"
 
 class Game
 {

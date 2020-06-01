@@ -1,6 +1,6 @@
 #include "GameState.h"
 
-GameState::GameState(sf::RenderWindow* window) : State(window)
+GameState::GameState(sf::RenderWindow* window, std::stack<State*>* States) : State(window, States)
 {
 
 }
@@ -23,12 +23,14 @@ void GameState::playerMovement(Entity player, float time)
 
 void GameState::handleEnd()
 {
-	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	{
+		this->quit = true;
+	}
 }
 
 void GameState::updateKeyboard(float time)
 {
-	this->end();
 	this->playerMovement(player, time);
 }
 
@@ -39,6 +41,7 @@ void GameState::show(sf::RenderTarget* target)
 
 void GameState::update(float time)
 {
+	this->handleEnd();
 	this->updateKeyboard(time);
 	this->player.update(time);
 }

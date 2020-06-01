@@ -12,15 +12,17 @@
 class Entity
 {
 protected:
-	sf::RectangleShape shape;
+	sf::Texture* texture;
+	sf::Sprite* sprite;
 	float speed;
 
 public:
 	Entity();
 	~Entity();
 
-	virtual void move(const float time, const float x, const float y);
+	void CreateSprite(sf::Texture* texture);
 
+	virtual void move(const float time, const float x, const float y);
 	virtual void show(sf::RenderTarget* target);
 	virtual void update(const float time);
 };

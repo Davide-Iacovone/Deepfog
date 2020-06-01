@@ -1,9 +1,10 @@
 #include "State.h"
 
-State::State(sf::RenderWindow* window)
+State::State(sf::RenderWindow* window, std::stack<State*>* States)
 {
 	this->window = window;
 	this->quit = false;
+	this->States = States;
 }
 
 State::~State()
@@ -16,15 +17,9 @@ const bool& State::getEnd() const
 	return this->quit;
 }
 
-void State::end()
+void State::mousePosition()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-	{
-		this->quit = true;
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		std::cout << "A" << std::endl;
-	}
+	this->mouseScreen = sf::Mouse::getPosition();
+	this->mouseWindow = sf::Mouse::getPosition(*this->window);
+	this->mouseMap = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 }

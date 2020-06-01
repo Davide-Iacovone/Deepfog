@@ -23,7 +23,7 @@ void Game::setupWindow()
 
 void Game::setupStates()
 {
-	this->States.push(new GameState(this->window));
+	this->States.push(new MenuState(this->window, &this->States));
 }
 
 void Game::checkForEvents()
