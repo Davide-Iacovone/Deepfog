@@ -17,7 +17,7 @@ protected:
 	sf::RenderWindow* window;
 	sf::Event event;
 	sf::Clock clock;
-	sf::Time time;
+	float time;
 	std::stack<State* > States;
 
 	void setupWindow();
@@ -30,7 +30,7 @@ public:
 	Game();
 	~Game();
 	void running();
-	sf::Time getTime();
+	float getTime();
 	void timeMeasurment();
 
 };

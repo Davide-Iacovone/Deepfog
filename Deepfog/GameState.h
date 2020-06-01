@@ -5,13 +5,16 @@
 
 class GameState : public State
 {
+protected:
+	Entity player;
 public:
 	GameState(sf::RenderWindow* window);
 	~GameState();
 
+	void playerMovement(Entity player, float time);
 	void handleEnd();
-	void updateKeyboard(sf::Time time);
+	void updateKeyboard(float time);
 	void show(sf::RenderTarget* target);
-	void update(sf::Time time);
+	void update(float time);
 };
 

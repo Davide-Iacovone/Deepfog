@@ -4,6 +4,7 @@
 #include "SFML/Audio.hpp"
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"
+#include "Entity.h"
 
 #include <iostream>
 
@@ -23,9 +24,9 @@ public:
 
 	virtual void end();
 	virtual void handleEnd() = 0;
-	virtual void updateKeyboard(sf::Time time) = 0;
+	virtual void updateKeyboard(float time) = 0;
 	virtual void show(sf::RenderTarget* target = NULL) = 0;
-	virtual void update(sf::Time time) = 0;
+	virtual void update(float time) = 0;
 
 };
 

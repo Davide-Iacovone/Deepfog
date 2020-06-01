@@ -73,13 +73,13 @@ void Game::running()
 	}
 }
 
-sf::Time Game::getTime()
+float Game::getTime()
 {
-	return sf::Time();
+	return time;
 }
 
 
 void Game::timeMeasurment()
 {
-	time = clock.restart();
+	time = clock.restart().asSeconds();
 }
