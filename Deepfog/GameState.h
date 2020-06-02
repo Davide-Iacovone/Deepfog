@@ -1,17 +1,20 @@
 #pragma once
 #include "State.h"
+#include "Player.h"
 
 #include <iostream>
 
 class GameState : public State
 {
 protected:
-	Entity player;
+	Player *player;
 public:
 	GameState(sf::RenderWindow* window, std::stack<State*>* States);
 	~GameState();
 
-	void playerMovement(Entity player, float time);
+	void initResources();
+	void initPlayer();
+	void playerMovement(Player *player, float time);
 	void handleEnd();
 	void updateKeyboard(float time);
 	void show(sf::RenderTarget* target);

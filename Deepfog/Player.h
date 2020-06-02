@@ -1,15 +1,12 @@
 #pragma once
+#include "Entity.h"
 
-#include "Game.h"
-
-class Player
+class Player : public Entity
 {
 public:
-	Player();
+	Player(float x, float y, sf::Texture& texture);
 	~Player();
 
-	
-private:
-
+	void initEngines();
 };
 

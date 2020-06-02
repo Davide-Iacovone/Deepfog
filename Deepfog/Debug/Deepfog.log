@@ -1,25 +1,2 @@
-﻿  Game.cpp
-  GameState.cpp
-  MenuState.cpp
-C:\Users\Davide\Desktop\Deepfog\Deepfog\MenuState.cpp(34,90): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\Davide\Desktop\Deepfog\Deepfog\MenuState.cpp(34,63): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-  State.cpp
-  main.cpp
-  Generowanie kodu...
+﻿  Player.cpp
   Deepfog.vcxproj -> C:\Users\Davide\Desktop\Deepfog\Debug\Deepfog.exe

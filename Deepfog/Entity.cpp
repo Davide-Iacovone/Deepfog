@@ -2,36 +2,41 @@
 
 Entity::Entity()
 {
-	this->sprite = NULL;
 	this->texture = NULL;
-	this->speed = 100.f;
+	this->movementEngine = NULL;
 }
 
 Entity::~Entity()
 {
 }
 
-void Entity::CreateSprite(sf::Texture* texture)
+void Entity::CreateSprite(sf::Texture& texture)
 {
-	this->texture = texture;
-	this->sprite->setTexture(*this->texture);
+		this->texture = &texture;
+		this->sprite.setTexture(texture);
+}
+
+void Entity::createMovementEngine(float maxSpeed)
+{
+	this->movementEngine = new MovementEngine(this->sprite, maxSpeed);
+}
+
+void Entity::setPosition(float x, float y)
+{
+		this->sprite.setPosition(x, y);
 }
 
 void Entity::move(const float time, const float x, const float y)
 {
-	if (this->sprite)
+	if (this->movementEngine)
 	{
-		this->sprite->move(x * this->speed * time, y * this->speed * time);
+		this->movementEngine->move(x, y, time);
 	}
-	
 }
 
 void Entity::show(sf::RenderTarget* target)
 {
-	if (this->sprite)
-	{
-		target->draw(*this->sprite);
-	}
+		target->draw(this->sprite);
 }
 
 void Entity::update(const float time)

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <map>
 
 class State
 {
@@ -18,6 +19,8 @@ protected:
 	sf::Vector2i mouseWindow;
 	sf::Vector2f mouseMap;
 	std::stack<State*>* States;
+	std::map<std::string, sf::Texture> resources;
+
 	bool quit;
 
 public:
