@@ -8,6 +8,8 @@ Entity::Entity()
 
 Entity::~Entity()
 {
+	delete this->movementEngine;
+	delete this->animationEngine;
 }
 
 void Entity::CreateSprite(sf::Texture& texture)
@@ -19,6 +21,11 @@ void Entity::CreateSprite(sf::Texture& texture)
 void Entity::createMovementEngine(float maxSpeed)
 {
 	this->movementEngine = new MovementEngine(this->sprite, maxSpeed);
+}
+
+void Entity::createAnimationEngine(sf::Texture& sheets)
+{
+	this->animationEngine = new AnimationEngine(this->sprite, sheets);
 }
 
 void Entity::setPosition(float x, float y)

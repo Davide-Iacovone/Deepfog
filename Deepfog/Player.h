@@ -8,5 +8,6 @@ public:
 	~Player();
 
 	void initEngines();
+	void update(const float time);
 };
 

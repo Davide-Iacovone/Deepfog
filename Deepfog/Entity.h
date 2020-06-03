@@ -9,6 +9,7 @@
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"
 #include "MovementEngine.h"
+#include "AnimationEngine.h"
 
 class Entity
 {
@@ -16,6 +17,7 @@ protected:
 	sf::Texture* texture;
 	sf::Sprite sprite;
 	MovementEngine* movementEngine;
+	AnimationEngine* animationEngine;
 
 public:
 	Entity();
@@ -23,6 +25,7 @@ public:
 
 	void CreateSprite(sf::Texture& texture);
 	void createMovementEngine(float maxSpeed);
+	void createAnimationEngine(sf::Texture& sheets);
 	void setPosition(float x, float y);
 
 	virtual void move(const float time, const float x, const float y);

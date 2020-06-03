@@ -14,7 +14,7 @@ GameState::~GameState()
 void GameState::initResources()
 {
 	sf::Texture t1;
-	t1.loadFromFile("textures/Man.png");
+	t1.loadFromFile("textures/Man_idle.png");
 	this->resources["player_normal"] = t1;
 }
 
