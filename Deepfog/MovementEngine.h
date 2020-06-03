@@ -21,6 +21,8 @@ public:
 
 	sf::Vector2f getSpeed();
 
+	bool isMoving();
+
 	void move(float x, float y, float time);
 	void update(float time);
 };

@@ -13,6 +13,18 @@ sf::Vector2f MovementEngine::getSpeed()
 	return this->speed;
 }
 
+bool MovementEngine::isMoving()
+{
+	if (speed.x == 0.f && speed.y == 0.f)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
 void MovementEngine::move(float x, float y, float time)
 {
 	this->speed.x = this->maxSpeed * x;
@@ -22,4 +34,10 @@ void MovementEngine::move(float x, float y, float time)
 
 void MovementEngine::update(float time)
 {
+
 }
+
+	
+
+	
+

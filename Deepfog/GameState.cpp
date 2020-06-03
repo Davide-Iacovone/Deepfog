@@ -14,7 +14,7 @@ GameState::~GameState()
 void GameState::initResources()
 {
 	sf::Texture t1;
-	t1.loadFromFile("textures/Man_idle.png");
+	t1.loadFromFile("textures/player.png");
 	this->resources["player_normal"] = t1;
 }
 
@@ -27,12 +27,14 @@ void GameState::playerMovement(Player *player, float time)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		this->player->move(time, 0.f, -1.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		this->player->move(time, 0.f, 1.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		this->player->move(time, -1.f, 0.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		this->player->move(time, 1.f, 0.f);
+	else
+		this->player->move(time, 0.f, 0.f);
 }
 
 void GameState::handleEnd()
