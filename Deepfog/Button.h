@@ -26,7 +26,7 @@ public:
 	bool isPressed();
 	void setPressed();
 	void state(sf::Vector2f mouse);
-	void show(sf::RenderTarget* target);
+	void show(sf::RenderTarget& target);
 	void update(sf::Vector2f mouse);
 };
 

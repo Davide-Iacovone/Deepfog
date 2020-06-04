@@ -40,7 +40,7 @@ void MenuState::showButtons(sf::RenderTarget* target)
 {
 	for (auto &i : buttons)
 	{
-		i->show(target);
+		i->show(*target);
 	}
 }
 

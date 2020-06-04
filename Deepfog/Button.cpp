@@ -58,10 +58,10 @@ void Button::state(sf::Vector2f mouse)
 	}
 }
 
-void Button::show(sf::RenderTarget* target)
+void Button::show(sf::RenderTarget& target)
 {
-	target->draw(this->body);
-	target->draw(this->text);
+	target.draw(this->body);
+	target.draw(this->text);
 }
 
 void Button::update(sf::Vector2f mouse)

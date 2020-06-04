@@ -4,6 +4,7 @@ Player::Player(float x, float y, sf::Texture& texture)
 {
 	this->setPosition(x, y);
 
+	this->createCollisionEngine(this->sprite, 0.f, 0.f, 48.f, 48.f);
 	this->createMovementEngine(100.f);
 	this->createAnimationEngine(texture);
 
@@ -31,6 +32,7 @@ void Player::update(const float time)
 	{
 		this->animationEngine->play("player_normal", time);
 	}
+	this->collisionEngine->update();
 }
 
 

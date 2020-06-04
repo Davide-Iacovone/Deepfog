@@ -52,7 +52,8 @@ void GameState::updateKeyboard(float time)
 
 void GameState::show(sf::RenderTarget* target)
 {
-	this->player->show(this->window);
+	this->map.show(*target);
+	this->player->show(*target);
 }
 
 void GameState::update(float time)
